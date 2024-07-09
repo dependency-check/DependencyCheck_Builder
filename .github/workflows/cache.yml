@@ -20,6 +20,11 @@ jobs:
         with:
           distribution: 'zulu' # See 'Supported distributions' for available options
           java-version: '11'
+      - name: validate
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+        run: |
+          curl -H "Accept: application/json" -H "apiKey: $NVD_API_KEY" -v https://services.nvd.nist.gov/rest/json/cves/2.0\?cpeName\=cpe:2.3:o:microsoft:windows_10:1607:\*:\*:\*:\*:\*:\*:\*
       - name: update
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
