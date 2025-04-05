@@ -18,8 +18,8 @@ jobs:
           ref: gh-pages
       - uses: actions/setup-java@v4
         with:
-          distribution: 'zulu' # See 'Supported distributions' for available options
-          java-version: '11'
+          java-version: '17'
+          distribution: 'temurin'
       - name: update
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
