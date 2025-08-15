@@ -15,7 +15,7 @@ ls -la .
 echo "login to 1password"
 eval $(op signin)
 
-op run --java -jar vulnz.jar cve --cache --directory ./nvd_cache --delay=8000
+op run -- java -jar vulnz.jar cve --cache --directory ./nvd_cache --delay=8000
 rm vulnz.jar
 git status
 cat nvd_cache/cache.properties
