@@ -36,3 +36,4 @@ jobs:
           git add ./nvd_cache/
           git commit -am 'chore: update'
           git push origin gh-pages --force
+          cat nvd_cache/nvdcve-modified.meta
